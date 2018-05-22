@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    # @items = Item.all
+    if params[:query].present?
+      @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @items = Item.all
+    end
   end
 
   def show
