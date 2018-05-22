@@ -42,6 +42,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to bookings_path
+
   end
 
   private
