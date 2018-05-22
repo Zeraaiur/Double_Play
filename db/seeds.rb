@@ -9,7 +9,6 @@ Booking.destroy_all
 10.times do
   user = User.new(
     email: Faker::Internet.email,
-    address: Faker::Address.street_address,
     password: Faker::Internet.password,
     username: Faker::HarryPotter.character,
     last_name: Faker::Name.last_name,
