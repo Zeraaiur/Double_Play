@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @item = Item.new
   end
 
