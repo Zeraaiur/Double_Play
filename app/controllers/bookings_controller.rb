@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = Booking.all
+  end
   def new
     @item = Item.find(params[:item_id])
     @booking = Booking.new
@@ -17,27 +20,27 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
-    @item = Item.find(params[:item_id])
-    @booking = Booking.find(params[:id])
-  end
+  # def edit
+  #   @item = Item.find(params[:item_id])
+  #   @booking = Booking.find(params[:id])
+  # end
 
-  def update
-     @booking = Booking.find(params[:id])
-     @item = Item.find(params[:item_id])
-    if @booking.update(booking_params)
-      redirect_to item_path(@item)
-    else
-      render: edit
-    end
-  end
+  # def update
+  #    @booking = Booking.find(params[:id])
+  #    @item = Item.find(params[:item_id])
+  #   if @booking.update(booking_params)
+  #     redirect_to item_path(@item)
+  #   else
+  #     render: edit
+  #   end
+  # end
 
-  def destroy
-    @booking = Booking.find(params[:id])
-    @item = Item.find(params[:item_id])
-    @booking.delete
-    redirect_to item_path(@item)
-  end
+  # def destroy
+  #   @booking = Booking.find(params[:id])
+  #   @item = Item.find(params[:item_id])
+  #   @booking.delete
+  #   redirect_to item_path(@item)
+  # end
 
   private
 
