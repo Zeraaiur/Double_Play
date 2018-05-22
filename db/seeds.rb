@@ -21,7 +21,7 @@ end
 10.times do
   users = User.all
   item = Item.new(
-    name: Faker::Book.title,
+    name: "#{Faker::Team.sport} ball",
     description: Faker::Hipster.paragraph,
     price: Faker::Number.decimal(2),
     user: users.sample,
