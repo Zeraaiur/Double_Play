@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.update(strong_params)
-      redirect_to @item, notice "Item was successfully updated."
+      redirect_to item_path(@item), notice, "Item was successfully updated."
     else
       render :edit
     end
