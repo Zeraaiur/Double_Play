@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'items/index'
   get 'items/show'
   get 'items/new'
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   get 'booking/edit'
   get 'booking/update'
   get 'booking/destroy'
-  devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
