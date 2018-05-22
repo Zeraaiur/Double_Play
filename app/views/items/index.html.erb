@@ -3,10 +3,19 @@
 
 <h3>What are you looking for?</h3>
 
-<form action="">
+<%= form_tag items_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find what you're looking for"
+  %>
+<% end %>
+
+
+<!-- <form action="">
   <input type="search for your sports item here">
   <input type="submit" value="Go!">
-</form>
+</form>-->
 
 <ul>
   <% @items.each do |item| %>
