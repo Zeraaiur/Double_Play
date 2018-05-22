@@ -1,0 +1,10 @@
+<%= simple_form_for [@item, @booking] do |f| %>
+  <div>
+  <%= f.input :pick_time %>
+  <%= f.input :return_time %>
+</div>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back", item_bookings_path %>
