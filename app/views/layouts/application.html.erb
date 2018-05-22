@@ -10,6 +10,17 @@
     <%# stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <!-- SIGN UP - LOG IN - SIGN OUT  -->
+    <% if user_signed_in? %>
+    <h3>Bienvenue <%= current_user.username.capitalize %> !</h3>
+    <%= link_to "Log out", destroy_user_session_path, :method => :delete %> <br>
+    <%= link_to "Cancel my account", user_registration_path, :method => :delete %>
+    <% else  %>
+
+    <%= link_to "Log in",  user_session_path %> <br>
+    <%= link_to "Sign up",  new_user_registration_path %>
+    <% end %>
+
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
