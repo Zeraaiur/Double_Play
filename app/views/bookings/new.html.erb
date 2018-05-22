@@ -1,10 +1,22 @@
 <%= simple_form_for [@item, @booking] do |f| %>
   <div>
-  <%= f.input :pick_time %>
-  <%= f.input :return_time %>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+              <%= f.input :pick_time, as: :string %>
+               <%= f.input :return_time, as: :string %>
+          </div>
+       </div>
+    </div>
+  </div>
+</div>
 </div>
 
-  <%= f.submit %>
+
+  <div class = "submit"> <%= f.submit %> </div>
 <% end %>
 
-<%= link_to "Back", item_bookings_path %>
+<div class = "back"> <%= link_to "Back", item_bookings_path %> </div>
+
