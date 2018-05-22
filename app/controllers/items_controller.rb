@@ -8,13 +8,17 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @item = Item.new
   end
 
   def create
-    @item = Item.create(strong_params)
+    @user = User.find(current_user.id)
+    @item = Item.new(strong_params)
+    @item.user = @user
+
     if @item.save
-      redirect_to item_path
+      redirect_to items_path
     else
       render :new
     end
@@ -28,7 +32,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.update(strong_params)
-      redirect_to item_path
+      redirect_to items_path
     else
       render :edit
     end
@@ -37,7 +41,8 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to booking_path
+    redirect_to bookings_path
+
   end
 
   private
