@@ -26,7 +26,6 @@ end
     price: Faker::Number.decimal(2),
     user: users.sample,
     photo: Faker::Fillmurray.image,
-    city: Faker::Address.city
   )
   item.save!
 end
