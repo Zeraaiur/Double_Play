@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(strong_params)
     if @item.save
-      # redirect_to WHERE ??? <== TO REVIEW
+      redirect_to item_path
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     if @item.update(strong_params)
-      redirect_to @item, notice "Item was successfully updated."
+      redirect_to item_path
     else
       render :edit
     end
@@ -37,8 +37,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-
-    # redirect_to items_path <== TO REVIEW
+    redirect_to booking_path
   end
 
   private
