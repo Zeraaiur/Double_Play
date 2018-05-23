@@ -1,22 +1,56 @@
-<h1>Testing Items Index Page</h1>
+<!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/PAGES/HOME.SCSS -->
 
+<h1>Testing Items Index Page</h1>
 <h3>What are you looking for?</h3>
 
-<%= form_tag items_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find what you're looking for"
-  %>
-<% end %>
+<div class="index-container">
+
+  <div class="row row-banner">
+    <div id="search-container" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+      <div class="logo-and-search">
+        <h1>Search for your sports item here</h1>
+        <%= form_tag items_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-item",
+          placeholder: "Try Baseball bat!"
+        %>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="map-container" class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    </div>
+  </div>
+
+  <div class="row card-row">
+
+  <% @items.each do |item| %>
+
+
+  <div class="card">
+    <img class="card-img-top card-image" src=<%= item.photo  %> alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
+      <p class="card-text"><%= item.description%></p>
+    </div>
+    <div class="card-footer">
+      <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+    </div>
+  </div>
+
+  <% end %>
+
+
+  </div>
+</div>
+
+
+
+
 
 <!-- <form action="">
   <input type="search for your sports item here">
   <input type="submit" value="Go!">
 </form>-->
-
-<ul>
-  <% @items.each do |item| %>
-    <li><%= link_to item.name, item_path(item)%></li>
-  <% end %>
-</ul>

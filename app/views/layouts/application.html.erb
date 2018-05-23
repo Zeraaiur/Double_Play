@@ -7,6 +7,8 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
     <%# stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
@@ -24,10 +26,10 @@
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <img src="<%= cl_image_path current_user.avatar, height: 300, width: 400, crop: :fill %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
            <li> <span class="navbar-wagon-item navbar-wagon-link"><%= link_to "Log out", destroy_user_session_path, :method => :delete %> </span> </li>
-            <li> <span class="navbar-wagon-item navbar-wagon-link"><%= link_to "Dashboard", bookings_path %> </span> </li>
+            <li> <span class="navbar-wagon-item navbar-wagon-link"><%= link_to "Dashboard", dashboard_path %> </span> </li>
         </ul>
       </div>
     </div>
@@ -81,7 +83,28 @@
     <% end %>
 
     <%= yield %>
+
+
+    <footer class="footerr">
+      <div class="container">
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#"> <i class="fab fa-github"> </i> </a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      <div class="footer-copyright">
+        Double-Play
+    </div>
+  </div>
+</div>
+</footer>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
+
   </body>
 </html>
