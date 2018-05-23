@@ -10,7 +10,7 @@ Booking.destroy_all
     email: Faker::Internet.email,
     password: Faker::Internet.password,
     username: Faker::HarryPotter.character,
-    city: Faker::Address.city,
+    address: Faker::Address.country,
     last_name: Faker::Name.last_name,
     first_name: Faker::Name.first_name
   )
