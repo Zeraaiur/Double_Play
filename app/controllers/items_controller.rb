@@ -1,8 +1,16 @@
 class ItemsController < ApplicationController
   def index
+    @items = []
     # @items = Item.all
-    if params[:query].present?
-      @items = Item.where("name ILIKE ?", "%#{params[:query]}%")
+    if params[:query].present? && params[:query2].present?
+      items_choice = Item.where("name ILIKE ?", "%#{params[:query]}%")
+
+      items_choice.each do |choice|
+        if choice.user.address == params[:query2]
+          @items.push choice
+        end
+      end
+      return @items
     else
       @items = Item.all
     end
@@ -10,10 +18,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @user_id = @item.user_id
-    @user_address = User.find_by_id(@user_id).address
     @booking = Booking.new
-    # raise
   end
 
   def new
