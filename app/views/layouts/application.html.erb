@@ -7,6 +7,7 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+
     <%# stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
@@ -81,7 +82,28 @@
     <% end %>
 
     <%= yield %>
+
+
+    <footer class="footerr">
+      <div class="container">
+      <div class="footer">
+        <div class="footer-links">
+          <a href="#"> <i class="fab fa-github"> </i> </a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      <div class="footer-copyright">
+        Double-Play
+    </div>
+  </div>
+</div>
+</footer>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
+
   </body>
 </html>
