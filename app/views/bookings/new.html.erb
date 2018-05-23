@@ -3,20 +3,18 @@
 
 <%= simple_form_for [@item, @booking] do |f| %>
   <div>
-<div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
         <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker1'>
               <%= f.input :pick_time, as: :string %>
-               <%= f.input :return_time, as: :string %>
+              <%= f.input :return_time, as: :string %>
+            </div>
           </div>
-       </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
-
-
   <div class = "submit"> <%= f.submit %> </div>
 <% end %>

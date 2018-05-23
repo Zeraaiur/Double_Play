@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user_id = @item.user_id
     @user_address = User.find_by_id(@user_id).address
+    @booking = Booking.new
     # raise
   end
 
