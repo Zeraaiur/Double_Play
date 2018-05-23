@@ -10,6 +10,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @user_id = @item.user_id
+    @user_address = User.find_by_id(@user_id).address
+    # raise
   end
 
   def new
