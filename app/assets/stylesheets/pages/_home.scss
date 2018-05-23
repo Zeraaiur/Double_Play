@@ -1,5 +1,65 @@
 // Specific CSS for your home-page
+.index-container{
+  width:100%;
+  padding:0px;
+}
+.row-banner{
+  height:40vh;
+}
 
-.btn .btn-primary {
-  color: white;
+#search-container{
+  background-color:blue;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+  padding:40px;
+  text-align:center;
+}
+.search-item{
+  width:100%;
+  font-size:1.5rem!important;
+  display:none;
+}
+
+
+
+
+
+
+
+
+#map-container{
+  background-color:red;
+  height:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card-row{
+  background-color:green;
+  height:auto;
+  padding:20px;
+  justify-content: center;
+}
+.card{
+  padding:0px!important;
+  margin:1%;
+  width:300px;
+}
+.card-image{
+  height:200px;
+  background-color:#333;
+}
+.card-footer{
+  height:40px;
 }
