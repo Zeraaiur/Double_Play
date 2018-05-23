@@ -20,7 +20,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
-gem 'faker'
+gem 'geocoder'
 
 
 group :development do
