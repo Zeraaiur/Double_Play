@@ -1,3 +1,22 @@
 <h1><%= @item.name.capitalize %></h1>
 <p>Find me in app/views/items/show.html.erb</p>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <img src="https://fillmurray.com/200/200" alt="">
+    </div>
+    <div class="col-xs-6">
+      <img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57723/globe_west_2048.jpg" style="width:200px">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <h3>Item Description</h3>
+      <%= @item.description %>
+    </div>
+    <div class="col-xs-6">
+      <img src="http://p1cdn4static.sharpschool.com/UserFiles/Servers/Server_1005942/Image/News/calendar.png" style="width:200px">
+    </div>
+  </div>
+</div>
