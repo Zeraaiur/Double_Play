@@ -26,7 +26,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :confirmed_at
       # t.datetime :confirmation_sent_at
       # t.string   :unconfirmed_email # Only if using reconfirmable
-      t.string   :last_name
+      t.string :last_name
       t.string :first_name
       t.string :username
       t.string :city
