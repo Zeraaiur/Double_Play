@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avatar, PhotoUploader
+
   has_many :bookings, dependent: :destroy
   has_many :items, dependent: :destroy
   validates :last_name, presence:true
