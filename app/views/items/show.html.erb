@@ -1,9 +1,8 @@
 <h1><%= @item.name.capitalize %></h1>
-<p>Find me in app/views/items/show.html.erb</p>
-<p>test for item address</p>
-<%= current_user.address %>
+<h4>These addresses will be used for map location</h4>
+<p>Current_user's Address (will change to search address): <%= current_user.address %></p>
 <br>
-<%= @user_address %>
+<p>Item location address: <%= @user_address %></p>
 
 <div class="container">
   <div class="row">
@@ -20,7 +19,23 @@
       <%= @item.description %>
     </div>
     <div class="col-xs-6">
-      <img src="http://p1cdn4static.sharpschool.com/UserFiles/Servers/Server_1005942/Image/News/calendar.png" style="width:200px">
+      <%= simple_form_for [@item, @booking] do |f| %>
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class='col-sm-6'>
+                <div class="form-group">
+                  <div class='input-group date' id='datetimepicker1'>
+                    <%= f.input :pick_time, as: :string %>
+                    <%= f.input :return_time, as: :string %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class = "submit"> <%= f.submit %> </div>
+      <% end %>
     </div>
   </div>
 </div>
