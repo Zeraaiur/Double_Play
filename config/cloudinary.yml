@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: neals
+  api_key: '625184944773732'
+  api_secret: 7lANORrSGcvJbHmDQCaFL0x5pOI
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: neals
+  api_key: '625184944773732'
+  api_secret: 7lANORrSGcvJbHmDQCaFL0x5pOI
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: neals
+  api_key: '625184944773732'
+  api_secret: 7lANORrSGcvJbHmDQCaFL0x5pOI
+  enhance_image_tag: true
+  static_image_support: false
