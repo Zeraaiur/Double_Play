@@ -25,7 +25,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://images.unsplash.com/photo-1485395037613-e83d5c1f5290?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=303133965924236f90bd9dc78701e444&auto=format&fit=crop&w=1050&q=80"
+item.remote_photo_url = "https://source.unsplash.com/random/200x100"
 item.save!
 
 item = Item.new(
@@ -35,7 +35,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://images.unsplash.com/photo-1507668339897-8a035aa9527d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=353236fe54c58ca0323ebd9ea2e5ef3f&auto=format&fit=crop&w=701&q=80"
+item.remote_photo_url = "https://source.unsplash.com/random/200x100"
 item.save!
 
 item = Item.new(
@@ -45,7 +45,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://images.unsplash.com/photo-1511110011044-5ce8fb4e7b61?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=75984e9a5ee095f71f462163bfbe2541&auto=format&fit=crop&w=634&q=80"
+item.remote_photo_url = "https://source.unsplash.com/random/200x100"
 item.save!
 
 item = Item.new(
@@ -55,8 +55,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://images.unsplash.com/photo-1505626237572-1e64df53ceae?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=eb1770d9759a8a11cf608ff785546d79&auto=format&fit=crop&w=634&q=80"
-
+item.remote_photo_url = "https://source.unsplash.com/random/200x100"
 item.save!
 
 item = Item.new(
@@ -66,7 +65,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://images.unsplash.com/photo-1496161341410-90ce6ad8b390?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0d66e4ceeedc14bdc73443c98713e63b&auto=format&fit=crop&w=967&q=80"
+item.remote_photo_url = "https://source.unsplash.com/random/200x100"
 item.save!
 
 item = Item.new(
@@ -76,7 +75,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://images.unsplash.com/photo-1489731110502-23f1239ea56c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1b99caa0328ac722439422dc82eab68f&auto=format&fit=crop&w=634&q=80"
+item.remote_photo_url = "https://source.unsplash.com/random/200x100"
 item.save!
 
 item = Item.new(
@@ -86,7 +85,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://images.unsplash.com/photo-1496062339235-ae16724801fb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ef76080de8f41944e36e37f65b41b598&auto=format&fit=crop&w=1050&q=80"
+item.remote_photo_url = "https://source.unsplash.com/random/200x100"
 item.save!
 
 10.times do
