@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     # end
 
     if params[:query2].present?
-      near_user_ids = User.near(params[:query2], 10).map(&:id)
+      near_user_ids = User.near(params[:query2], 100).map(&:id)
       @items = Item.where(user_id: near_user_ids)
     else
       @items = Item.joins(:user).where("users.latitude IS NOT NULL AND users.longitude IS NOT NULL")
@@ -39,6 +39,7 @@ class ItemsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
+
 
   end
 
