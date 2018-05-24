@@ -25,3 +25,18 @@ input.btn {
   background-color: blue;
   color: white;
 }
+
+.login_form {
+  width: 100%;
+  text-align: center;
+}
+
+.form-box {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1506274866733-5c732faa6947?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b8941f7ff8c571d3fc563702d085b542&auto=format&fit=crop&w=750&q=80");
+  background-size: cover;
+}
+
+.form-container {
+  background: rgba(100, 100, 100, 0.5);
+}
