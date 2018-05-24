@@ -10,7 +10,7 @@
       <% next_item = @all_item.first %>
       <% end %>
 
-      <%= link_to "next", item_path(next_item) %>
+      <%= link_to "", item_path(next_item), :class => "fa fa-arrow-right"%>
     </div>
 
     <div id='previous-link'>
@@ -19,7 +19,7 @@
       <% previous_item = @all_item.last %>
       <% end %>
 
-      <%= link_to "previous", item_path(previous_item) %>
+      <%= link_to "", item_path(previous_item), :class => "fa fa-arrow-left"%>
 
     </div>
     <div class="show-image" style="background-image:url(<%= @item.photo %>)">
@@ -37,7 +37,7 @@
       <br>
       <h2>Rent this <%= @item.name.capitalize %>!</h2>
       <br>
-      <%= simple_form_for [@item, @booking] do |f| %>
+      <%= simple_form_for [@item, @booking],  :method => :post do |f| %>
       <div>
 
         <div class="form-group-calendar">
@@ -54,6 +54,14 @@
       <% end %>
 
     </div>
+
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    ></div>
+
 
   </div>
 
