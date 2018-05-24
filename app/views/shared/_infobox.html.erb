@@ -1,0 +1,12 @@
+
+<div class="container">
+  <div class="row">
+    <div class="cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= item.photo? ? cl_image_path(item.photo, height: 300, width: 400, crop: :fill) : 'http://placeholder.it' ; %>');">
+        <div class="cards-description">
+       <h2><%= item.user.address %></h2>
+      </div>
+    </div>
+  </div>
+   </div>
+
+
