@@ -1,8 +1,3 @@
-<h1><%= @item.name.capitalize %></h1>
-<h4>These addresses will be used for map location</h4>
-<p>Current_user's Address (will change to search address): <%= current_user.address %></p>
-<br>
-<p>Item location address: <%= @user_address %></p>
 
 <div class="container">
   <div class="row">
@@ -21,6 +16,7 @@
     <div class="col-xs-6">
       <%= simple_form_for [@item, @booking] do |f| %>
         <div>
+
           <div class="container">
             <div class="row">
               <div class='col-sm-6'>
