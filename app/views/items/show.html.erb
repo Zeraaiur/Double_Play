@@ -1,37 +1,62 @@
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6">
-      <img src="https://fillmurray.com/200/200" alt="">
-    </div>
-    <div class="col-xs-6">
-      <img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/57000/57723/globe_west_2048.jpg" style="width:200px">
-    </div>
+<div id="show-container">
+  <div id="show-banner">
   </div>
-  <div class="row">
-    <div class="col-xs-6">
-      <h3>Item Description</h3>
-      <%= @item.description %>
-    </div>
-    <div class="col-xs-6">
-      <%= simple_form_for [@item, @booking] do |f| %>
-        <div>
+  <div id="show-card">
 
-          <div class="container">
-            <div class="row">
-              <div class='col-sm-6'>
-                <div class="form-group">
-                  <div class='input-group date' id='datetimepicker1'>
-                    <%= f.input :pick_time, as: :string %>
-                    <%= f.input :return_time, as: :string %>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+    <div id='back-link'>
+      <% next_item = @all_item.where("id > ?", @item.id).first %>
+      <% if next_item.nil? %>
+      <% next_item = @all_item.first %>
+      <% end %>
+
+      <%= link_to "next", item_path(next_item) %>
+    </div>
+
+    <div id='previous-link'>
+      <% previous_item = @all_item.where("id < ?", @item.id).last %>
+      <% if previous_item.nil? %>
+      <% previous_item = @all_item.last %>
+      <% end %>
+
+      <%= link_to "previous", item_path(previous_item) %>
+
+    </div>
+    <div class="show-image" style="background-image:url(<%= @item.photo %>)">
+
+    </div>
+    <div>
+      <h1><%= @item.name.capitalize %></h1>
+      <h2><%= @item.price %> $ / day !</h2>
+      <br>
+      <hr>
+      <br>
+      <h3><%= @item.description %></h3>
+      <br>
+      <hr>
+      <br>
+      <h2>Rent this <%= @item.name.capitalize %>!</h2>
+      <br>
+      <%= simple_form_for [@item, @booking] do |f| %>
+      <div>
+
+        <div class="form-group-calendar">
+          <div class="input-group date datetimepicker" id='datetimepicker1'>
+            <%= f.input :pick_time, as: :string %>
+          </div>
+          <div class="input-group date datetimepicker" id='datetimepicker2'>
+            <%= f.input :return_time, as: :string %>
           </div>
         </div>
-        <div class = "submit"> <%= f.submit %> </div>
+
+      </div>
+      <div class = "submit booking-submit"> <%= f.submit class: "btn btn-warning btn-lg" %> </div>
       <% end %>
+
     </div>
+
   </div>
+
 </div>
+
+

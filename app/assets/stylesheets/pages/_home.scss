@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
+.container {
+  margin-bottom: 300px;
+}
 .index-container{
   width:100%;
   padding:0px;
@@ -61,5 +64,12 @@ margin-top:10px;
   background-color:#333;
 }
 .card-footer{
-  height:40px;
+  height:30px;
 }
+.flexbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
