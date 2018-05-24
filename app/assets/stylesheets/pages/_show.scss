@@ -1,0 +1,65 @@
+#show-container{
+  width:100vw;
+  background-color:#f4f4f4;
+  height: 100vw;
+  text-align:center;
+}
+#show-banner{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  background-image:linear-gradient(-225deg, rgba(13,13,13,0.3) 0%,
+  rgba(88,51,0,0.1) 50%), asset-url("sport.jpg");
+  height:500px;
+}
+#show-card{
+  display:inline-block;
+  background-color:white;
+  border-radius:5px;
+  box-shadow: 1px 1px 2px #ddd;
+  width:70%;
+  min-width:250px;
+  margin-top:-10%;
+  padding:3%;
+  padding-top:40px;
+  text-align:center;
+}
+.show-image{
+  border-radius:5px;
+  display:inline-block;
+height:350px;
+width:350px;
+   background-position: cover;
+   background-position:center;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 2px #ddd;
+    margin-bottom:20px;
+}
+@media only screen and (max-width: 600px) {
+    .show-image{
+      display:inline-block;
+      height:250px;
+      width:250px;
+
+    }
+    #show-card{
+  width:100%;
+    }
+}
+.form-group-calendar{
+  display:flex;
+  justify-content:space-around;
+}
+.datetimepicker{
+  display:block!important;
+  margin:0px 30px;
+
+}
+.form-control-label{
+  font-size:2em!important;
+}
+
+.booking-submit{
+  margin:40px 0px;
+  display:block;
+}
