@@ -1,7 +1,7 @@
 <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/PAGES/HOME.SCSS -->
-<div class="index-container">
+<div class="wrapper">
   <div class="row row-banner">
-    <div id="" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search-container">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search-container">
       <div class="logo-and-search">
         <h1>Sports item you need</h1>
         <%= form_tag items_path, method: :get do %>
@@ -22,21 +22,25 @@
     </div>
     <div  class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search-container">
       <div id="map-container"></div>
+      <p> Map goes here </p>
     </div>
   </div>
-  <div class="row card-row">
-  <% @items.each do |item| %>
-  <div class="card">
-    <img class="card-img-top card-image" src="https://images.unsplash.com/photo-1463253897230-4e281bf226c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b72fcba78c273e8d51a8522946f3b3b7&auto=format&fit=crop&w=2089&q=80"   alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
-      <p class="card-text"><%= item.description%></p>
+
+  <div class="card-container">
+    <div class="row card-row">
+    <% @items.each do |item| %>
+    <div class="card">
+      <img class="card-img-top card-image" src="https://images.unsplash.com/photo-1463253897230-4e281bf226c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b72fcba78c273e8d51a8522946f3b3b7&auto=format&fit=crop&w=2089&q=80"   alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
+        <p class="card-text"><%= item.description%></p>
+      </div>
+      <div class="card-footer">
+        <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+      </div>
     </div>
-    <div class="card-footer">
-      <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+    <% end %>
     </div>
-  </div>
-  <% end %>
   </div>
 </div>
 <!-- <form action="">

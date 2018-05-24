@@ -1,9 +1,9 @@
-<%= link_to "Log in",  user_session_path %> <br>
-<%= link_to "Sign up",  new_user_registration_path %>
-
 <%= simple_form_for [@item, @booking] do |f| %>
   <div>
     <div class="container">
+      <div class="title">
+        <h3> Make a Booking </h3>
+      </div>
       <div class="row">
         <div class='col-sm-6'>
           <div class="form-group">

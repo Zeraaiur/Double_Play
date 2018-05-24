@@ -7,8 +7,5 @@ Rails.application.routes.draw do
     resources :bookings
    end
 
-  resources :dashboard do
-    resources :bookings
-    resources :items
-  end
+  resources :dashboard
 end
