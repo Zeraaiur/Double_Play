@@ -1,76 +1,87 @@
 <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/DASHBOARD/INDEX.SCSS -->
 <div class="wrapper">
+  <div class="title">
+    <h1>Dashboard</h1>
+  </div>
   <div class="container">
-    <div class="title">
-      <h3> My bookings </h3>
-    </div>
-    <div class="body">
-      <div class="row row-bookings">
-        <% @bookings.each do |booking| %>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+    <div class="bookings">
+      <div class="title">
+        <h3>My Bookings (People renting from me)</h3>
+      </div>
+      <div class="body">
+        <div class="row">
+          <% @bookings.each do |booking| %>
           <div class="card">
-          <div class="card-picture">
             <%= image_tag "#{booking.item.photo}" %>
             <div class="card-description">
-              <p> <%=booking.item.name %> </p>
-              <p> <%=booking.pick_time %> </p>
-              <p> <%=booking.return_time %> </p>
+              <h5 class="card-title"><%= link_to booking.item.name, item_path(booking.item)%></h5>
+              <p> <%= booking.item.description %> </p>
+              <p> Pick-up: <%=booking.pick_time %> Return: <%=booking.return_time %> </p>
+            </div>
+            <div class="card-footer flexbox">
+              <div class="flex-item">
+                <p>Location: <%= booking.item.user.address %></p>
+              </div>
+              <div class="flex-item">
+                <p>Price: $<%= booking.item.price %></p>
+              </div>
             </div>
           </div>
-          <div class="card-footer">
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="rentals">
+      <div class="title">
+        <h3>My Rentals (Things I have rented)</h3>
+      </div>
+      <div class="row">
+        <% @rentals.each do |rental| %>
+        <div class="card">
+          <%= image_tag "#{rental.photo}" %>
+          <div class="card-description">
+            <h5 class="card-title"><%= link_to rental.name, item_path(rental)%></h5>
+            <p> <%= rental.description %> </p>
+          </div>
+          <div class="card-footer flexbox">
+            <div class="flex-item">
+              <p>Location: <%= rental.user.address %></p>
+            </div>
+            <div class="flex-item">
+              <p>Price: $<%= rental.price %></p>
+            </div>
           </div>
         </div>
         <% end %>
       </div>
     </div>
 
+    <div class="my-items">
       <div class="title">
-        <h3> My Rentals </h3>
+        <h3>My Rentable Items</h3>
       </div>
-      <div class="card-container">
-        <div class="row row-rentals">
-          <% @rentals.each do |rental| %>
-          <div class="col-xs-12 col-sm-4">
-            <%= image_tag "#{rental.photo}" %>
-              <div class="card-body">
-                <div class="card-title">
-                  <h5> <%=rental.name %> </h5>
-                </div>
-                <div class="card-text">
-                </div>
-                <div class="card-footer">
-                </div>
-              </div>
+      <div class="row">
+        <% @user_items.each do |item| %>
+        <div class="card">
+          <%= image_tag "#{item.photo}" %>
+          <div class="card-description">
+            <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
+            <p> <%= item.description %> </p>
+          </div>
+          <div class="card-footer flexbox">
+            <div class="flex-item">
+              <p>Location: <%= item.user.address %></p>
+            </div>
+            <div class="flex-item">
+              <p>Price: $<%= item.price %></p>
             </div>
           </div>
-          <% end %>
         </div>
-      </div>
-
-      <div class="title">
-        <h3> My Items </h3>
-      </div>
-      <div class="card-container">
-        <div class="row row-items">
-          <% @user_items.each do |item| %>
-          <div class="col-xs-12 col-sm-4">
-            <%= image_tag "#{item.photo}" %>
-              <div class="card-body">
-                <div class="card-title">
-                  <h5> <%=item.name %> </h5>
-                </div>
-                <div class="card-text">
-                  <p> <%=item.description %> </p>
-                  <p> <%=item.price %> </p>
-                </div>
-                <div class="card-footer">
-                </div>
-              </div>
-            </div>
-          </div>
-          <% end %>
-        </div>
+        <% end %>
       </div>
     </div>
+
   </div>
 </div>
