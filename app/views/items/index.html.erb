@@ -5,10 +5,10 @@
       <div class="logo-and-search">
         <h1>Sports item you need</h1>
         <%= form_tag items_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control search-item",
-          placeholder: "Try Baseball bat!"
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control search-item",
+            placeholder: "Try Baseball bat!"
           %> <br>
 
           <h1 >Your location</h1>
