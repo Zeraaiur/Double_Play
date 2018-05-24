@@ -1,56 +1,58 @@
 <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/PAGES/HOME.SCSS -->
 <div class="wrapper">
   <div class="row row-banner">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search-container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-container">
       <div class="logo-and-search">
+       <img src="logo2-01.png" alt="" id="logo">
         <h1>Sports item you need</h1>
         <%= form_tag items_path, method: :get do %>
         <%= text_field_tag :query,
-          params[:query],
-          class: "form-control search-item",
+        params[:query],
+        class: "form-control search-item",
           placeholder: "Try Baseball bat!"
-        %> <br>
-      <h1>Your location</h1>
+          %> <br>
+
+          <h1 >Your location</h1>
           <%= text_field_tag :query2,
           params[:query2],
           class: "form-control search-item",
-          placeholder: "Try Montreal"
-        %>
-        <%= submit_tag("Search", :id=>"button", :class=>"btn btn-secondary btn-lg btn-main", :name=>"submit") %>
-        <% end %>
-      </div>
-    </div>
-    <div  class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search-container">
-      <div id="map-container"></div>
-      <p> Map goes here </p>
-    </div>
-  </div>
+            placeholder: "Try Montreal",
+            id: "address-input"
+            %>
 
-  <div class="card-container">
-    <div class="row card-row">
-    <% @items.each do |item| %>
-    <div class="card">
-      <!-- <img class="card-img-top card-image" src="#{item.photo}"   alt="Card image cap"> -->
-      <%= image_tag "#{item.photo}" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
-        <p class="card-text"><%= item.description%></p>
-      </div>
-      <div class="card-footer flexbox">
-        <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
-        <div class="flex-item">
-          <p>Location: <%= item.user.address %></p>
+            <%= submit_tag("Search", :id=>"button", :class=>"btn btn-secondary btn-lg btn-main", :name=>"submit") %>
+            <% end %>
+          </div>
         </div>
-        <div class="flex-item">
-          <p>Price: $<%= item.price %></p>
+
+      <div class="card-container">
+        <div class="row card-row">
+          <% @items.each do |item| %>
+          <div class="card">
+            <!-- <img class="card-img-top card-image" src="#{item.photo}"   alt="Card image cap"> -->
+            <%= image_tag "#{item.photo}" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
+              <p class="card-text"><%= item.description%></p>
+            </div>
+            <div class="card-footer flexbox">
+              <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+              <div class="flex-item">
+                <p>Location: <%= item.user.address %></p>
+              </div>
+              <div class="flex-item">
+                <p>Price: $<%= item.price %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
-    <% end %>
-    </div>
-  </div>
-</div>
-<!-- <form action="">
-  <input type="search for your sports item here">
-  <input type="submit" value="Go!">
-</form>-->
+
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    ></div>
