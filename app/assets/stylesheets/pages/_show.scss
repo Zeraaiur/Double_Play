@@ -1,6 +1,6 @@
 #show-container{
   width:100vw;
-  background-color:blue;
+  background-color:#f4f4f4;
   height: 100vw;
   text-align:center;
 }
@@ -14,8 +14,52 @@
 }
 #show-card{
   display:inline-block;
-  background-color:red;
-  height:600px;
+  background-color:white;
+  border-radius:5px;
+  box-shadow: 1px 1px 2px #ddd;
   width:70%;
-  margin-top:-8%;
+  min-width:250px;
+  margin-top:-10%;
+  padding:3%;
+  padding-top:40px;
+  text-align:center;
+}
+.show-image{
+  border-radius:5px;
+  display:inline-block;
+height:350px;
+width:350px;
+   background-position: cover;
+   background-position:center;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 2px #ddd;
+    margin-bottom:20px;
+}
+@media only screen and (max-width: 600px) {
+    .show-image{
+      display:inline-block;
+      height:250px;
+      width:250px;
+
+    }
+    #show-card{
+  width:100%;
+    }
+}
+.form-group-calendar{
+  display:flex;
+  justify-content:space-around;
+}
+.datetimepicker{
+  display:block!important;
+  margin:0px 30px;
+
+}
+.form-control-label{
+  font-size:2em!important;
+}
+
+.booking-submit{
+  margin:40px 0px;
+  display:block;
 }
