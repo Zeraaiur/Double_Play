@@ -1,8 +1,9 @@
 #show-container{
   width:100vw;
   background-color:#f4f4f4;
-  height: 100vw;
+  padding-bottom:40px;
   text-align:center;
+
 }
 #show-banner{
     background-position: center;
@@ -13,6 +14,7 @@
   height:500px;
 }
 #show-card{
+  position:relative;
   display:inline-block;
   background-color:white;
   border-radius:5px;
@@ -21,8 +23,9 @@
   min-width:250px;
   margin-top:-10%;
   padding:3%;
-  padding-top:40px;
+  padding-top:80px;
   text-align:center;
+  margin-bottom:50px;
 }
 .show-image{
   border-radius:5px;
@@ -45,13 +48,32 @@ width:350px;
     #show-card{
   width:100%;
     }
+.datetimepicker{
+  margin:0px!important;
+  width:200px!important;
 }
+#back-link{
+  font-size:2em;
+position:absolute;
+right:30px;
+top:15px;
+}
+#previous-link{
+  font-size:2em;
+position:absolute;
+left:30px;
+top:15px;
+}
+}
+
+
+
 .form-group-calendar{
   display:flex;
   justify-content:space-around;
 }
 .datetimepicker{
-  display:block!important;
+  display:inline-block!important;
   margin:0px 30px;
 
 }
@@ -62,4 +84,16 @@ width:350px;
 .booking-submit{
   margin:40px 0px;
   display:block;
+}
+#back-link{
+  font-size:2em;
+position:absolute;
+right:15px;
+top:15px;
+}
+#previous-link{
+  font-size:2em;
+position:absolute;
+left:15px;
+top:15px;
 }
