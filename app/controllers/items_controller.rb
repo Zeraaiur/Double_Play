@@ -1,19 +1,45 @@
 class ItemsController < ApplicationController
   def index
-    @items = []
-    # @items = Item.all
-    if params[:query].present? && params[:query2].present?
-      items_choice = Item.where("name ILIKE ?", "%#{params[:query]}%")
+    # @items = []
+    # if params[:query].present? && params[:query2].present?
+    #   items_choice = Item.where("name ILIKE ?", "%#{params[:query]}%")
 
-      items_choice.each do |choice|
-        if choice.user.address == params[:query2]
-          @items.push choice
-        end
-      end
-      return @items
+    #   items_choice.each do |choice|
+    #     if choice.user.address == params[:query2]
+    #       @items.push choice
+    #     end
+    #   end
+    #   return @items
+    # else
+    #   @items = Item.all
+    # end
+
+
+    # if params[:query].present?
+    #   @items = Item.where("title ILIKE ?", "%#{params[:query]}%")
+    # else
+    #   @items = Item.all
+    # end
+
+    if params[:query2].present?
+      near_user_ids = User.near(params[:query2], 10).map(&:id)
+      @items = Item.where(user_id: near_user_ids)
     else
-      @items = Item.all
+      @items = Item.joins(:user).where("users.latitude IS NOT NULL AND users.longitude IS NOT NULL")
     end
+
+    if params[:query].present?
+      @items = @items.search_by_name(params[:query])
+    end
+
+    @markers = @items.map do |item|
+      {
+        lat: item.user.latitude,
+        lng: item.user.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
+
   end
 
   def show
