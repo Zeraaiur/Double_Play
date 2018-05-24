@@ -43,6 +43,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @all_item = Item.all
     @item = Item.find(params[:id])
     @booking = Booking.new
   end
