@@ -1,8 +1,9 @@
 <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/PAGES/HOME.SCSS -->
 <div class="wrapper">
   <div class="row row-banner">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search-container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-container">
       <div class="logo-and-search">
+       <img src="logo2-01.png" alt="" id="logo">
         <h1>Sports item you need</h1>
         <%= form_tag items_path, method: :get do %>
         <%= text_field_tag :query,
@@ -24,11 +25,7 @@
             <% end %>
           </div>
         </div>
-        <div  class="col-xs-12 col-sm-6 col-md-6 col-lg-6 search-container">
-          <div id="map-container"></div>
-          <p> Map goes here </p>
-        </div>
-      </div>
+
       <div class="card-container">
         <div class="row card-row">
           <% @items.each do |item| %>
