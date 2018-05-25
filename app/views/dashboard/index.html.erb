@@ -1,13 +1,14 @@
 <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/DASHBOARD/INDEX.SCSS -->
 <div class="wrapper">
   <div class="title">
-    <h1>Dashboard</h1>
+    <h1 style="display: inline;">Dashboard</h1>
+    <%= link_to "Add Item", new_item_path, :class => "btn btn-primary", :style => "position: absolute; right: 10px; margin-top: 5px" %>
   </div>
   <div class="container">
 
     <div class="bookings">
       <div class="title">
-        <h3>My Bookings (People renting from me)</h3>
+        <h3>My Bookings (Items I have borrowed from others)</h3>
       </div>
       <div class="body">
         <div class="row">
@@ -33,34 +34,37 @@
       </div>
     </div>
 
-    <div class="rentals">
+    <div class="bookings">
       <div class="title">
-        <h3>My Rentals (Things I have rented)</h3>
+        <h3>Bookings on My Items (people borrowing from me)</h3>
       </div>
-      <div class="row">
-        <% @rentals.each do |rental| %>
-        <div class="card">
-          <%= image_tag "#{rental.photo}" %>
-          <div class="card-description">
-            <h5 class="card-title"><%= link_to rental.name, item_path(rental)%></h5>
-            <p> <%= rental.description %> </p>
-          </div>
-          <div class="card-footer flexbox">
-            <div class="flex-item">
-              <p>Location: <%= rental.user.address %></p>
+      <div class="body">
+        <div class="row">
+          <% @bookings_on_my_items.each do |booking| %>
+          <div class="card">
+            <%= image_tag "#{booking.item.photo}" %>
+            <div class="card-description">
+              <h5 class="card-title"><%= link_to booking.item.name, item_path(booking.item)%></h5>
+              <p> <%= booking.item.description %> </p>
+              <p> Pick-up: <%=booking.pick_time %> Return: <%=booking.return_time %> </p>
             </div>
-            <div class="flex-item">
-              <p>Price: $<%= rental.price %></p>
+            <div class="card-footer flexbox">
+              <div class="flex-item">
+                <p>Location: <%= booking.item.user.address %></p>
+              </div>
+              <div class="flex-item">
+                <p>Price: $<%= booking.item.price %></p>
+              </div>
             </div>
           </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
 
     <div class="my-items">
       <div class="title">
-        <h3>My Rentable Items</h3>
+        <h3>My Rentable Items (all items I have available to lend out)</h3>
       </div>
       <div class="row">
         <% @user_items.each do |item| %>

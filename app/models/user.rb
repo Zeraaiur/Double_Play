@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
   has_many :items, dependent: :destroy
+  has_many :bookings_on_my_items, through: :items, source: :bookings
+
   validates :last_name, presence:true
   validates :username, presence: true
   validates :last_name, presence: true
