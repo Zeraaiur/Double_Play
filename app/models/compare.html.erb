@@ -1,0 +1,59 @@
+ <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/PAGES/HOME.SCSS -->
+<div class="wrapper">
+  <div class="row row-banner">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-container">
+      <div class="logo-and-search">
+       <%= image_tag "logo2-01.png", :id => "logo" %>
+        <h1>Sports item you need</h1>
+        <%= form_tag items_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-item",
+          placeholder: "Try Baseball bat!"
+          %> <br>
+          <h1 >Your location</h1>
+          <%= text_field_tag :query2,
+          params[:query2],
+          class: "form-control search-item",
+            placeholder: "Try Montreal",
+            id: "address-input"
+            %>
+            <br>
+            <%= submit_tag("Search", :id=>"button", :class=>"btn btn-warning btn-lg btn-main", :name=>"submit") %>
+            <% end %>
+          </div>
+        </div>
+      <div class="card-container">
+        <div class="row card-row">
+          <% @items.each do |item| %>
+          <div class="card">
+            <img class="card-img-top card-image" src="#{item.photo}"   alt="Card image cap">
+            <%= image_tag "#{item.photo}" %>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
+              <p class="card-text"><%= item.description%></p>
+            </div>
+            <div class="card-footer">
+              <!-- <small class="text-muted">Last updated 3 mins ago</small> -->
+              <div class="flex-item">
+                <p>Location: <%= item.user.address %></p>
+              </div>
+              <div class="flex-item">
+                <p>Price: $<%= item.price %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px; box-shadow: -1px -1px 3px #ccc"
+    data-markers="<%= @markers.to_json %>"
+    ></div>
+<!-- <form action="">
+  <input type="search for your sports item here">
+  <input type="submit" value="Go!">
+</form>-->
