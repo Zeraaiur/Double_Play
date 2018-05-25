@@ -35,10 +35,11 @@ class ItemsController < ApplicationController
     @markers = @items.map do |item|
       {
         lat: item.user.latitude,
-        lng: item.user.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        lng: item.user.longitude,
+        infoWindow: { content: render_to_string(partial: "/shared/infobox", locals: { item: item }) }
       }
     end
+
 
   end
 
