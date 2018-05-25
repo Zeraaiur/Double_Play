@@ -5,17 +5,59 @@ User.destroy_all
 Item.destroy_all
 Booking.destroy_all
 
-10.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: "doubleplay",
-    username: Faker::HarryPotter.character,
-    address: "#{Faker::Address.building_number} Gouin Boulevard, Montreal, QC",
-    last_name: Faker::Name.last_name,
-    first_name: Faker::Name.first_name
-  )
-  user.save!
-end
+# User Seed
+
+user = User.new(
+  email: Faker::Internet.email,
+  password: "doubleplay",
+  username: Faker::HarryPotter.character,
+  address: "1155 Guy Street, Montreal, QC",
+  last_name: Faker::Name.last_name,
+  first_name: Faker::Name.first_name
+)
+user.save!
+
+user = User.new(
+  email: Faker::Internet.email,
+  password: "doubleplay",
+  username: Faker::HarryPotter.character,
+  address: "221 Gouin Boulevard, Montreal, QC",
+  last_name: Faker::Name.last_name,
+  first_name: Faker::Name.first_name
+)
+user.save!
+
+user = User.new(
+  email: Faker::Internet.email,
+  password: "doubleplay",
+  username: Faker::HarryPotter.character,
+  address: "15 Prince Arthur, Montreal, QC",
+  last_name: Faker::Name.last_name,
+  first_name: Faker::Name.first_name
+)
+user.save!
+
+user = User.new(
+  email: Faker::Internet.email,
+  password: "doubleplay",
+  username: Faker::HarryPotter.character,
+  address: "21 Main Street, Ottawa, ON",
+  last_name: Faker::Name.last_name,
+  first_name: Faker::Name.first_name
+)
+user.save!
+
+user = User.new(
+  email: Faker::Internet.email,
+  password: "doubleplay",
+  username: Faker::HarryPotter.character,
+  address: "2803 Rue de la Faune, Quebec City, QC",
+  last_name: Faker::Name.last_name,
+  first_name: Faker::Name.first_name
+)
+user.save!
+
+# Item Seed
 
 users = User.all
 item = Item.new(
@@ -25,7 +67,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/basketball.jpg"
 item.save!
 
 item = Item.new(
@@ -35,7 +77,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/tent.jpg"
 item.save!
 
 item = Item.new(
@@ -45,7 +87,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/cleets.jpg"
 item.save!
 
 item = Item.new(
@@ -55,7 +97,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/rock-climbing.jpg"
 item.save!
 
 item = Item.new(
@@ -65,7 +107,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/scubA.jpg"
 item.save!
 
 item = Item.new(
@@ -75,7 +117,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261728/motorcycle.jpg"
 item.save!
 
 item = Item.new(
@@ -85,7 +127,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261728/golf-clubs.jpg"
 item.save!
 
 10.times do
@@ -93,7 +135,7 @@ item.save!
   items = Item.all
   booking = Booking.new(
     item: items.sample,
-    user: users.first,
+    user: users.sample,
     pick_time: Faker::Time.between(DateTime.now - 6, DateTime.now),
     return_time: Faker::Time.between(DateTime.now - 1, DateTime.now)
   )
