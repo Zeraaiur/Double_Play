@@ -19,12 +19,13 @@ class ItemsController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/shared/infobox", locals: { item: item }) }
       }
     end
-
+    if current_user
     @markers << {
       lat: current_user.latitude,
       lng: current_user.longitude,
       icon: 'http://maps.google.com/mapfiles/kml/paddle/purple-stars.png'
     }
+  end
 
   end
 
