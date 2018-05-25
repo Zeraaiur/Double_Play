@@ -1,28 +1,34 @@
-<div class="container">
-  <h2 style="text-align: center">Sign up</h2>
+<div class="form-box">
+  <div class="container">
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <div class="row" style="text-align: center">
-        <div class="col-xs-6">
-          <%= f.input :username, required: true, autofocus: true %>
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :first_name, required: true, autofocus: true %>
-          <%= f.input :last_name, required: true, autofocus: true %>
-        </div>
-        <div class="col-xs-6">
-          <%= f.input :address, required: true, autofocus: true %>
-          <%= f.input :password, required: true, placeholder: "6 characters minimum" %>
-          <%= f.input :password_confirmation, required: true %>
-          <%= f.input :avatar, autofocus: true %>
+      <div class="form-inputs">
+        <div class="row" style="text-align: center">
+          <div class="col-xs-6 col-xs-offset-3">
+              <h2 style="text-align: center">Sign up</h2>
+            <div class="row form-container">
+              <div class="col-xs-6">
+                <%= f.input :username, required: true, autofocus: true %>
+                <%= f.input :email, required: true, autofocus: true %>
+                <%= f.input :first_name, required: true, autofocus: true %>
+                <%= f.input :last_name, required: true, autofocus: true %>
+              </div>
+              <div class="col-xs-6">
+                <%= f.input :address, required: true, autofocus: true %>
+                <%= f.input :password, required: true, placeholder: "6 characters minimum" %>
+                <%= f.input :password_confirmation, required: true %>
+                <%= f.input :avatar, autofocus: true %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-actions" style="text-align: center">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
+      <div class="form-actions" style="text-align: center">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+  </div>
 </div>
