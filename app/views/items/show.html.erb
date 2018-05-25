@@ -18,16 +18,12 @@
     </div>
     <div class="show-image" style="background-image:url(<%= @item.photo %>)">
     </div>
-    <div>
+    <div class="main-text-box">
       <h1><%= @item.name.capitalize %></h1>
-      <h2><%= @item.price %> $ / day !</h2>
-      <br>
+      <h2><%= @item.price %> $ / day</h2>
       <hr>
-      <br>
       <h3><%= @item.description %></h3>
-      <br>
       <hr>
-      <br>
       <h2>Rent this <%= @item.name.capitalize %>!</h2>
       <br>
       <%= simple_form_for [@item, @booking],  :method => :post do |f| %>
@@ -41,7 +37,7 @@
           </div>
         </div>
       </div>
-      <div class = "submit booking-submit"> <%= f.submit class: "btn btn-warning btn-lg" %> </div>
+      <div class = "submit booking-submit"> <%= f.submit class: "btn btn-secondary btn-lg btn-main", id:"button"%> </div>
       <% end %>
     </div>
     <div
