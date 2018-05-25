@@ -52,11 +52,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @booking = Booking.new
      @markers =
-      {
+      [{
         lat: @item.user.latitude,
         lng: @item.user.longitude,
         infoWindow: { content: render_to_string(partial: "/shared/infobox", locals: { item: @item }) }
-      }
+      }]
   end
 
   def new
