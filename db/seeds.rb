@@ -14,7 +14,7 @@ user = User.new(
   last_name: Faker::Name.last_name,
   first_name: Faker::Name.first_name
 )
-user.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527277489/shttefan-472897-unsplash.jpg"
+user.remote_avatar_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527277489/shttefan-472897-unsplash.jpg"
 user.save!
 
 user = User.new(
@@ -25,7 +25,7 @@ user = User.new(
   last_name: Faker::Name.last_name,
   first_name: Faker::Name.first_name
 )
-user.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527277548/marivi-pazos-226486-unsplash.jpg"
+user.remote_avatar_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527277548/marivi-pazos-226486-unsplash.jpg"
 user.save!
 
 user = User.new(
