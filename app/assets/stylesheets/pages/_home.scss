@@ -33,8 +33,14 @@
     font-weight:bolder;
   }
 }
-.btn-main{
-margin-top:10px;
+#button{
+margin-top:30px;
+padding:10px 40px;
+background-color:$yellow;
+font-size:2em;
+}
+#button:hover{
+  opacity:0.89;
 }
 #logo{
   width:100%;
@@ -47,5 +53,10 @@ margin-top:10px;
   height:auto;
   padding:20px;
   justify-content: center;
+  margin-left:12px!important;
+  width:100vw;
+  min-height:200px;
 }
-.card-container{}
+.card-container{
+  min-height: 200px;
+}

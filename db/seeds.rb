@@ -4,7 +4,6 @@
 User.destroy_all
 Item.destroy_all
 Booking.destroy_all
-
 # User Seed
 
 user = User.new(
@@ -57,14 +56,12 @@ user = User.new(
 )
 user.save!
 
-# Item Seed
-
 users = User.all
 item = Item.new(
   name: "Basketball",
   description: "Brand new basketball, men's NBA sized and looking to get dunked!",
   price: "15.45",
-  user: users.first,
+  user: users.sample,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/basketball.jpg"
@@ -74,7 +71,7 @@ item = Item.new(
   name: "Tent",
   description: "Big all season tent. Sleeps 4 people, has some minor wear but will get you through any cold night!",
   price: "77.00",
-  user: users.first,
+  user: users.sample,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/tent.jpg"
@@ -84,7 +81,7 @@ item = Item.new(
   name: "Cleets",
   description: "Size 12 soccer sandels",
   price: "34.55",
-  user: users.first,
+  user: users.sample,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/cleets.jpg"
@@ -94,7 +91,7 @@ item = Item.new(
   name: "Rock Climbing Equipment",
   description: "Helmet, shoes, harness, ropes and caribeeners all for your first crack at climbing. Good luck!",
   price: "166.21",
-  user: users.first,
+  user: users.sample,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/rock-climbing.jpg"
@@ -104,7 +101,7 @@ item = Item.new(
   name: "Scuba Equipment",
   description: "Everything you need to dive into the depths of the unknown and find hidden treasures.",
   price: "345.98",
-  user: users.first,
+  user: users.sample,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/scubA.jpg"
@@ -114,7 +111,7 @@ item = Item.new(
   name: "Motorcycle, Helmet and Jacket",
   description: "Vroom Vroom! 10,000 horsepower to race whatever you want and WIN!",
   price: "1255.32",
-  user: users.first,
+  user: users.sample,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261728/motorcycle.jpg"
@@ -124,7 +121,7 @@ item = Item.new(
   name: "Golf Clubs",
   description: "A set of Callaway golf clubs for your trip to the links. Lefty set.",
   price: "76.00",
-  user: users.first,
+  user: users.sample,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261728/golf-clubs.jpg"
