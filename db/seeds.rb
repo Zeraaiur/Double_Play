@@ -10,20 +10,22 @@ user = User.new(
   email: Faker::Internet.email,
   password: "doubleplay",
   username: Faker::HarryPotter.character,
-  address: "1155 Guy Street, Montreal, QC",
+  address: "11 Main Street, Burlington, VT",
   last_name: Faker::Name.last_name,
   first_name: Faker::Name.first_name
 )
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527277489/shttefan-472897-unsplash.jpg"
 user.save!
 
 user = User.new(
   email: Faker::Internet.email,
   password: "doubleplay",
   username: Faker::HarryPotter.character,
-  address: "221 Gouin Boulevard, Montreal, QC",
+  address: "2803 Rue de la Faune, Quebec City, QC",
   last_name: Faker::Name.last_name,
   first_name: Faker::Name.first_name
 )
+item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527277548/marivi-pazos-226486-unsplash.jpg"
 user.save!
 
 user = User.new(
@@ -50,7 +52,7 @@ user = User.new(
   email: Faker::Internet.email,
   password: "doubleplay",
   username: Faker::HarryPotter.character,
-  address: "2803 Rue de la Faune, Quebec City, QC",
+  address: "380 Somerville Ave., Somerville, MA",
   last_name: Faker::Name.last_name,
   first_name: Faker::Name.first_name
 )
@@ -61,7 +63,7 @@ item = Item.new(
   name: "Basketball",
   description: "Brand new basketball, men's NBA sized and looking to get dunked!",
   price: "15.45",
-  user: users.sample,
+  user: users.first,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/basketball.jpg"
@@ -71,7 +73,7 @@ item = Item.new(
   name: "Tent",
   description: "Big all season tent. Sleeps 4 people, has some minor wear but will get you through any cold night!",
   price: "77.00",
-  user: users.sample,
+  user: users.first,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/tent.jpg"
@@ -81,7 +83,7 @@ item = Item.new(
   name: "Cleets",
   description: "Size 12 soccer sandels",
   price: "34.55",
-  user: users.sample,
+  user: users.first,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/cleets.jpg"
@@ -91,7 +93,7 @@ item = Item.new(
   name: "Rock Climbing Equipment",
   description: "Helmet, shoes, harness, ropes and caribeeners all for your first crack at climbing. Good luck!",
   price: "166.21",
-  user: users.sample,
+  user: users.second,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261727/rock-climbing.jpg"
@@ -121,7 +123,7 @@ item = Item.new(
   name: "Golf Clubs",
   description: "A set of Callaway golf clubs for your trip to the links. Lefty set.",
   price: "76.00",
-  user: users.sample,
+  user: users.last,
   rented: false
 )
 item.remote_photo_url = "http://res.cloudinary.com/chimeraggeddon/image/upload/c_scale,h_200,w_200/v1527261728/golf-clubs.jpg"
