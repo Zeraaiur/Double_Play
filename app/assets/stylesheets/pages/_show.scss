@@ -73,29 +73,31 @@
   margin:0px 30px;
 
 }
-.form-control-label{
-  font-size: 2em!important;
-}
-
-.booking-submit{
-  margin:40px 0px;
-  display:block;
-}
-#back-link{
-  font-size:3em;
-
-  position:absolute;
-  right:15px;
-  top:15px;
-  a{
-    color:$orange;
+.datetimepicker{
+  .form-control-label{
+    color:black!important;
+    margin:0px 15%;
+    font-size:1.5em!important;
+  }}
+  .booking-submit{
+    margin:40px 0px;
+    display:block;
   }
-  a:hover{
-   text-decoration: none;
-   opacity:0.5;
+  #back-link{
+    font-size:3em;
+
+    position:absolute;
+    right:15px;
+    top:15px;
+    a{
+      color:$orange;
+    }
+    a:hover{
+     text-decoration: none;
+     opacity:0.5;
+   }
  }
-}
-#previous-link{
+ #previous-link{
   font-size:3em;
   position:absolute;
   left:15px;
