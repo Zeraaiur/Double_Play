@@ -1,4 +1,26 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
 
-<%= render 'form', item: @item %>
+<div class="form-box">
+  <div class="container">
+    <div class="row">
+      <div class="form-container col-xs-6 col-xs-offset-3">
+        <h1 style="text-align: center; margin-bottom: 15px">Add an Item to Loan Out</h1>
+        <div class="form-card">
+          <%= simple_form_for [@item] do |f| %>
+            <div class="form-inputs login_form">
+              <%= f.input :name %>
+              <%= f.input :description %>
+              <%= f.input :price %>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.input :user_id, :as => :hidden, :value => current_user %>
+            </div>
+
+            <div class="form-actions" style="text-align: center; margin-top: 40px">
+              <%= f.button :submit, "Log in" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
