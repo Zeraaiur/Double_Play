@@ -93,7 +93,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_index_path
 
   end
 

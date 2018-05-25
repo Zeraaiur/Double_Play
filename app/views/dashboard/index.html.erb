@@ -70,6 +70,9 @@
         <% @user_items.each do |item| %>
         <div class="card">
           <%= image_tag "#{item.photo}" %>
+
+          <%= link_to "Destroy", item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary", :style => "position: absolute; right: 10px; margin-top: 5px" %>
+
           <div class="card-description">
             <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
             <p> <%= item.description %> </p>
