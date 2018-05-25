@@ -1,7 +1,6 @@
 <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/DASHBOARD/INDEX.SCSS -->
 
 <div class="wrapper row">
-<%= link_to "Add Item", new_item_path, :class => "btn btn-primary", :style => "position: absolute; right: 10px; margin-top: 5px" %>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-container form-inputs">
       <div class="logo-and-search">
         <%= image_tag("logo2-01.png", id: "logo") %>
@@ -17,6 +16,7 @@
   <div class="row tab-row">
 
    <a href="#myItems" class="col-xs-4 tab"> <div >MY RENTAL ITEMS</div></a>
+
     <a href="#myBookings" class="col-xs-4 tab"> <div ">MY BOOKINGS (people renting from me)</div></a>
     <a href="#myRentals" class="col-xs-4 tab"> <div >MY RENTALS (Things I have rented)</div></a>
 
@@ -27,6 +27,7 @@
 
       <div class="title" style="text-align:center; padding:50px;font-weight:bolder" >
         <a name="myItems"><h1>My Rentable Items</h1></a><hr>
+        <%= link_to "Add Item", new_item_path, :class => "btn btn-primary", :style => "position: absolute; center: 10px; margin-top: 5px" %>
       </div>
 
       <div class="row" style="justify-content:center">
@@ -103,11 +104,11 @@
         <div class="card">
           <%= image_tag "#{rental.item.photo}" %>
           <div class="card-body">
-          <div class="card-description">
-            <h5 class="card-title"><%= link_to rental.item.name, item_path(rental)%></h5>
-            <p> <%= rental.item.description %> </p>
+            <div class="card-description">
+              <h5 class="card-title"><%= link_to rental.item.name, item_path(rental)%></h5>
+              <p> <%= rental.item.description %> </p>
+            </div>
           </div>
-        </div>
           <div class="card-footer flexbox">
             <div class="flex-item">
               <p>Location: <%= rental.user.address %></p>
@@ -125,7 +126,7 @@
         </div>
       </div>
     </div>
-
+</div>
 
 
   </div>
