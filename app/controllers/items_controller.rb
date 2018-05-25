@@ -1,25 +1,5 @@
 class ItemsController < ApplicationController
   def index
-    # @items = []
-    # if params[:query].present? && params[:query2].present?
-    #   items_choice = Item.where("name ILIKE ?", "%#{params[:query]}%")
-
-    #   items_choice.each do |choice|
-    #     if choice.user.address == params[:query2]
-    #       @items.push choice
-    #     end
-    #   end
-    #   return @items
-    # else
-    #   @items = Item.all
-    # end
-
-
-    # if params[:query].present?
-    #   @items = Item.where("title ILIKE ?", "%#{params[:query]}%")
-    # else
-    #   @items = Item.all
-    # end
 
     if params[:query2].present?
       near_user_ids = User.near(params[:query2], 100).map(&:id)
@@ -40,10 +20,11 @@ class ItemsController < ApplicationController
       }
     end
 
-      # @marker = {
-      #   lat: current_user.latitude,
-      #   lng: current_user.longitude
-      # }
+    @markers << {
+      lat: current_user.latitude,
+      lng: current_user.longitude,
+      icon: 'http://maps.google.com/mapfiles/kml/paddle/purple-stars.png'
+    }
 
   end
 
