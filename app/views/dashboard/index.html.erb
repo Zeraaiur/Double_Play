@@ -1,23 +1,76 @@
 <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/DASHBOARD/INDEX.SCSS -->
-<div class="wrapper">
-  <div class="title">
-    <h1>Dashboard</h1>
+<div class="wrapper row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-container form-inputs">
+      <div class="logo-and-search">
+        <%= image_tag("logo2-01.png", id: "logo") %>
+      </div>
+      <% if current_user.avatar? %>
+      <%= cl_image_tag current_user.avatar class:"big-avatar"%>
+      <% else %>
+      <img src="https://vignette.wikia.nocookie.net/tumblr-survivor-athena/images/7/7a/Blank_Avatar.png/revision/latest/scale-to-width-down/477?cb=20161204161729" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+      <% end %>
+      <h1><%= current_user.username %>'s  Dashboard</h1>
+    </div>
+
+  <div class="row tab-row">
+
+   <a href="#myItems" class="col-xs-4 tab"> <div >MY RENTAL ITEMS</div></a>
+    <a href="#myBookings" class="col-xs-4 tab"> <div ">MY BOOKINGS (people renting from me)</div></a>
+    <a href="#myRentals" class="col-xs-4 tab"> <div >MY RENTALS (Things I have rented)</div></a>
+
   </div>
+
   <div class="container">
 
+
+      <div class="title" style="text-align:center; padding:50px;font-weight:bolder" >
+        <a name="myItems"><h1>My Rentable Items</h1></a><hr>
+      </div>
+
+      <div class="row" style="justify-content:center">
+        <% @user_items.each do |item| %>
+        <div class="card col-xs-12 col-sm-6 col-md-4 col-lg-3" style="width:300px">
+          <%= image_tag "#{item.photo}" %>
+          <div class="card-body">
+          <div class="card-description">
+            <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
+            <p> <%= item.description %> </p>
+          </div>
+          </div>
+          <div class="card-footer flexbox">
+            <div class="flex-item">
+              <p>Location: <%= item.user.address %></p>
+            </div>
+            <div class="flex-item">
+              <p>Price: $<%= item.price %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+
+
+
+
+
+
     <div class="bookings">
-      <div class="title">
-        <h3>My Bookings (People renting from me)</h3>
+      <div class="title-dash">
+        <a name="myBookings"><h1>My Bookings (People renting from me)</h1></a><hr>
       </div>
       <div class="body">
-        <div class="row">
+        <div class="row" style="justify-content:center">
           <% @bookings.each do |booking| %>
           <div class="card">
+
             <%= image_tag "#{booking.item.photo}" %>
-            <div class="card-description">
-              <h5 class="card-title"><%= link_to booking.item.name, item_path(booking.item)%></h5>
-              <p> <%= booking.item.description %> </p>
-              <p> Pick-up: <%=booking.pick_time %> Return: <%=booking.return_time %> </p>
+            <div class="card-body">
+              <div class="card-description">
+                <h5 class="card-title"><%= link_to booking.item.name, item_path(booking.item)%></h5>
+                <p> <%= booking.item.description %> </p>
+                <p> Pick-up: <%=booking.pick_time %> Return: <%=booking.return_time %> </p>
+              </div>
             </div>
             <div class="card-footer flexbox">
               <div class="flex-item">
@@ -26,6 +79,7 @@
               <div class="flex-item">
                 <p>Price: $<%= booking.item.price %></p>
               </div>
+
             </div>
           </div>
           <% end %>
@@ -34,17 +88,19 @@
     </div>
 
     <div class="rentals">
-      <div class="title">
-        <h3>My Rentals (Things I have rented)</h3>
+      <div class="title-dash">
+        <a name="myRentals"><h1>My Rentals (Things I have rented)</h1></a><hr>
       </div>
-      <div class="row">
+      <div class="row" style="justify-content:center">
         <% @rentals.each do |rental| %>
         <div class="card">
           <%= image_tag "#{rental.photo}" %>
+          <div class="card-body">
           <div class="card-description">
             <h5 class="card-title"><%= link_to rental.name, item_path(rental)%></h5>
             <p> <%= rental.description %> </p>
           </div>
+        </div>
           <div class="card-footer flexbox">
             <div class="flex-item">
               <p>Location: <%= rental.user.address %></p>
@@ -58,30 +114,6 @@
       </div>
     </div>
 
-    <div class="my-items">
-      <div class="title">
-        <h3>My Rentable Items</h3>
-      </div>
-      <div class="row">
-        <% @user_items.each do |item| %>
-        <div class="card">
-          <%= image_tag "#{item.photo}" %>
-          <div class="card-description">
-            <h5 class="card-title"><%= link_to item.name, item_path(item)%></h5>
-            <p> <%= item.description %> </p>
-          </div>
-          <div class="card-footer flexbox">
-            <div class="flex-item">
-              <p>Location: <%= item.user.address %></p>
-            </div>
-            <div class="flex-item">
-              <p>Price: $<%= item.price %></p>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
 
   </div>
 </div>

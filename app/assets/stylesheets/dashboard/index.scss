@@ -1,0 +1,43 @@
+.search-container{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:linear-gradient(-225deg, rgba(13,13,13,0.7) 0%,
+  rgba(88,51,0,0.3) 50%), asset-url("sport3.jpg");
+}
+.search-container .avatar{
+max-width:200px;
+margin-bottom:20px;
+}
+.tab{
+  background-color:$yellow;
+  font-size:2em;
+  padding:20px 5px;
+  text-align:center;
+  border:1px solid white!important;
+  cursor:pointer;
+
+}
+.tab:hover{
+  background-color:$orange;
+  color:white;
+}
+
+
+
+.tab-row{
+  width:100vw;
+  margin-left:0px!important;
+  font-weight:bold;
+    a{
+    color:black;
+  }
+}
+.title-dash{
+text-align:center;
+padding:50px;
+text-weight:bolder;
+}
+
+

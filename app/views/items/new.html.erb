@@ -1,4 +1,30 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<div class="form-box">
+  <div class="container-sign-up">
+    <div class="form-inputs">
+      <%= image_tag("logo2-01.png", id: "logo") %>
+      <h1>Add an Item to Rent Out</h1
+        <div class="row form-container">
 
-<%= render 'form', item: @item %>
+          <div class="col-xs-12">
+
+            <div class="form-card" style="text-align:center;">
+              <%= simple_form_for [@item] do |f| %>
+              <div class="form-inputs login_form">
+                <%= f.input :name %>
+                <%= f.input :description %>
+                <%= f.input :price %>
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+                <%= f.input :user_id, :as => :hidden, :value => current_user %>
+              </div>
+
+              <div class="form-actions" style="text-align: center; margin-top: 40px">
+                <%= f.button :submit, "Submit", :id => "button" %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
