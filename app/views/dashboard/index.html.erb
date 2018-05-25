@@ -1,5 +1,7 @@
 <!-- CSS FOR THIS SECTION IS FOUND IN ASSETS/STYLESHEETS/DASHBOARD/INDEX.SCSS -->
+
 <div class="wrapper row">
+<%= link_to "Add Item", new_item_path, :class => "btn btn-primary", :style => "position: absolute; right: 10px; margin-top: 5px" %>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 search-container form-inputs">
       <div class="logo-and-search">
         <%= image_tag("logo2-01.png", id: "logo") %>
@@ -30,6 +32,8 @@
       <div class="row" style="justify-content:center">
         <% @user_items.each do |item| %>
         <div class="card col-xs-12 col-sm-6 col-md-4 col-lg-3" style="width:300px">
+                <%= link_to "Destroy", item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary", :style => "position: absolute; right: 10px; margin-top: 5px" %>
+
           <%= image_tag "#{item.photo}" %>
           <div class="card-body">
           <div class="card-description">
@@ -56,8 +60,10 @@
 
 
     <div class="bookings">
+
       <div class="title-dash">
         <a name="myBookings"><h1>My Bookings (People renting from me)</h1></a><hr>
+
       </div>
       <div class="body">
         <div class="row" style="justify-content:center">
@@ -87,6 +93,7 @@
       </div>
     </div>
 
+
     <div class="rentals">
       <div class="title-dash">
         <a name="myRentals"><h1>My Rentals (Things I have rented)</h1></a><hr>
@@ -105,14 +112,20 @@
             <div class="flex-item">
               <p>Location: <%= rental.user.address %></p>
             </div>
-            <div class="flex-item">
-              <p>Price: $<%= rental.price %></p>
+            <div class="card-footer flexbox">
+              <div class="flex-item">
+                <p>Location: <%= booking.item.user.address %></p>
+              </div>
+              <div class="flex-item">
+                <p>Price: $<%= booking.item.price %></p>
+              </div>
             </div>
           </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
+
 
 
   </div>

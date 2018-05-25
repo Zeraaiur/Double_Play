@@ -1,25 +1,5 @@
 class ItemsController < ApplicationController
   def index
-    # @items = []
-    # if params[:query].present? && params[:query2].present?
-    #   items_choice = Item.where("name ILIKE ?", "%#{params[:query]}%")
-
-    #   items_choice.each do |choice|
-    #     if choice.user.address == params[:query2]
-    #       @items.push choice
-    #     end
-    #   end
-    #   return @items
-    # else
-    #   @items = Item.all
-    # end
-
-
-    # if params[:query].present?
-    #   @items = Item.where("title ILIKE ?", "%#{params[:query]}%")
-    # else
-    #   @items = Item.all
-    # end
 
     if params[:query2].present?
       near_user_ids = User.near(params[:query2], 100).map(&:id)
@@ -39,11 +19,13 @@ class ItemsController < ApplicationController
         infoWindow: { content: render_to_string(partial: "/shared/infobox", locals: { item: item }) }
       }
     end
-
-      # @marker = {
-      #   lat: current_user.latitude,
-      #   lng: current_user.longitude
-      # }
+    if current_user
+    @markers << {
+      lat: current_user.latitude,
+      lng: current_user.longitude,
+      icon: 'http://maps.google.com/mapfiles/kml/paddle/purple-stars.png'
+    }
+  end
 
   end
 
@@ -51,6 +33,12 @@ class ItemsController < ApplicationController
     @all_item = Item.all
     @item = Item.find(params[:id])
     @booking = Booking.new
+     @markers =
+      [{
+        lat: @item.user.latitude,
+        lng: @item.user.longitude,
+        infoWindow: { content: render_to_string(partial: "/shared/infobox", locals: { item: @item }) }
+      }]
   end
 
   def new
@@ -87,7 +75,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_index_path
 
   end
 

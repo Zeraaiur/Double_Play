@@ -31,6 +31,7 @@
       <div class="card-container">
         <div class="row card-row">
           <% @items.each do |item| %>
+          <% if current_user != item.user %>
           <div class="card">
             <!-- <img class="card-img-top card-image" src="#{item.photo}"   alt="Card image cap"> -->
             <%= image_tag "#{item.photo}" %>
@@ -48,6 +49,7 @@
               </div>
             </div>
           </div>
+          <% end %>
           <% end %>
         </div>
       </div>
