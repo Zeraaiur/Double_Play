@@ -40,6 +40,10 @@ class ItemsController < ApplicationController
       }
     end
 
+      # @marker = {
+      #   lat: current_user.latitude,
+      #   lng: current_user.longitude
+      # }
 
   end
 
