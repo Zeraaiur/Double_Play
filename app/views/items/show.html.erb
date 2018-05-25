@@ -2,28 +2,21 @@
   <div id="show-banner">
   </div>
   <div id="show-card">
-
-
     <div id='back-link'>
       <% next_item = @all_item.where("id > ?", @item.id).first %>
       <% if next_item.nil? %>
       <% next_item = @all_item.first %>
       <% end %>
-
-      <%= link_to "next", item_path(next_item) %>
+      <%= link_to "", item_path(next_item), :class => "fa fa-arrow-right"%>
     </div>
-
     <div id='previous-link'>
       <% previous_item = @all_item.where("id < ?", @item.id).last %>
       <% if previous_item.nil? %>
       <% previous_item = @all_item.last %>
       <% end %>
-
-      <%= link_to "previous", item_path(previous_item) %>
-
+      <%= link_to "", item_path(previous_item), :class => "fa fa-arrow-left"%>
     </div>
     <div class="show-image" style="background-image:url(<%= @item.photo %>)">
-
     </div>
     <div>
       <h1><%= @item.name.capitalize %></h1>
@@ -37,9 +30,8 @@
       <br>
       <h2>Rent this <%= @item.name.capitalize %>!</h2>
       <br>
-      <%= simple_form_for [@item, @booking] do |f| %>
+      <%= simple_form_for [@item, @booking],  :method => :post do |f| %>
       <div>
-
         <div class="form-group-calendar">
           <div class="input-group date datetimepicker" id='datetimepicker1'>
             <%= f.input :pick_time, as: :string %>
@@ -48,15 +40,15 @@
             <%= f.input :return_time, as: :string %>
           </div>
         </div>
-
       </div>
       <div class = "submit booking-submit"> <%= f.submit class: "btn btn-warning btn-lg" %> </div>
       <% end %>
-
     </div>
-
+    <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    ></div>
   </div>
-
 </div>
-
-

@@ -55,7 +55,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
 item.save!
 
 item = Item.new(
@@ -65,7 +65,7 @@ item = Item.new(
   user: users.second,
   rented: false
 )
-item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
 item.save!
 
 item = Item.new(
@@ -75,7 +75,7 @@ item = Item.new(
   user: users.third,
   rented: false
 )
-item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
 item.save!
 
 item = Item.new(
@@ -85,7 +85,7 @@ item = Item.new(
   user: users.fourth,
   rented: false
 )
-item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
 item.save!
 
 item = Item.new(
@@ -95,7 +95,7 @@ item = Item.new(
   user: users.fifth,
   rented: false
 )
-item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
 item.save!
 
 item = Item.new(
@@ -105,7 +105,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
 item.save!
 
 item = Item.new(
@@ -115,7 +115,7 @@ item = Item.new(
   user: users.first,
   rented: false
 )
-item.remote_photo_url = "https://source.unsplash.com/random/200x200"
+# item.remote_photo_url = "https://source.unsplash.com/random/200x200"
 item.save!
 
 10.times do
