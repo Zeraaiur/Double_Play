@@ -1,29 +1,16 @@
 .form-control {
-  display: block;
-  width: 100%;
+  font-size:1.5rem!important;
+  max-width:400px;
   padding: .375rem .75rem;
-  font-size: 16px;
+  display:inline-block!important;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
-  background-clip: padding-box;
+  margin-bottom:10px;
+
   border: 1px solid #ced4da;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  // margin-left: 10px;
-}
-
-// .form-control-label {
-//   margin-left: 10px;
-// }
-
-// #signup_button {
-
-// }
-
-input.btn {
-  background-color: blue;
-  color: white;
 }
 
 .login_form {
@@ -32,12 +19,45 @@ input.btn {
 }
 
 .form-box {
-  height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1506274866733-5c732faa6947?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b8941f7ff8c571d3fc563702d085b542&auto=format&fit=crop&w=750&q=80");
+
+  padding:3%;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  justify-content:center;
+    background-image:linear-gradient(-225deg, rgba(13,13,13,0.5) 0%,
+    rgba(88,51,0,0.3) 50%), url("https://images.unsplash.com/photo-1506274866733-5c732faa6947?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b8941f7ff8c571d3fc563702d085b542&auto=format&fit=crop&w=750&q=80");
   background-size: cover;
+  min-height:100vh;
+
 }
 
-.form-container {
-  background: rgba(100, 100, 100, 0.5);
-  padding: 20px;
+.container-sign-up {
+  background: rgba(0, 0, 0, 0.4);
+  padding:20px;
+    border-radius:10px;
+}
+.form-inputs h1{
+  font-size:3em;
+  font-weight:bold;
+  color:$yellow;
+}
+
+
+.form-control-label{
+  color:white!important;
+  margin:0px 17%;
+  font-size:1.4em!important;
+}
+
+.user_avatar{
+  color:white!important;
+  font-weight:bold;
+  font-size:1.4em;
+}
+#new_user{
+  #button{
+    margin-top:10px;
+  }
+
 }
