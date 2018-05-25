@@ -94,18 +94,18 @@
     </div>
 
 
-    <div class="rentals">
+    <div class="container">
       <div class="title-dash">
         <a name="myRentals"><h1>My Rentals (Things I have rented)</h1></a><hr>
       </div>
       <div class="row" style="justify-content:center">
-        <% @rentals.each do |rental| %>
+        <% @bookings_on_my_items.each do |rental| %>
         <div class="card">
-          <%= image_tag "#{rental.photo}" %>
+          <%= image_tag "#{rental.item.photo}" %>
           <div class="card-body">
           <div class="card-description">
-            <h5 class="card-title"><%= link_to rental.name, item_path(rental)%></h5>
-            <p> <%= rental.description %> </p>
+            <h5 class="card-title"><%= link_to rental.item.name, item_path(rental)%></h5>
+            <p> <%= rental.item.description %> </p>
           </div>
         </div>
           <div class="card-footer flexbox">
@@ -114,10 +114,10 @@
             </div>
             <div class="card-footer flexbox">
               <div class="flex-item">
-                <p>Location: <%= booking.item.user.address %></p>
+                <p>Location: <%= rental.item.user.address %></p>
               </div>
               <div class="flex-item">
-                <p>Price: $<%= booking.item.price %></p>
+                <p>Price: $<%= rental.item.price %></p>
               </div>
             </div>
           </div>

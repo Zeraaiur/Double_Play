@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
     @item.user = @user
 
     if @item.save
-      redirect_to items_path
+      redirect_to dashboard_index_path
     else
       render :new
     end
