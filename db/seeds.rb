@@ -5,7 +5,19 @@ User.destroy_all
 Item.destroy_all
 Booking.destroy_all
 
-10.times do
+2.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    password: "doubleplay",
+    username: Faker::HarryPotter.character,
+    address: "New Delhi, India",
+    last_name: Faker::Name.last_name,
+    first_name: Faker::Name.first_name
+  )
+  user.save!
+end
+
+2.times do
   user = User.new(
     email: Faker::Internet.email,
     password: "doubleplay",
@@ -16,6 +28,24 @@ Booking.destroy_all
   )
   user.save!
 end
+
+6.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    password: "doubleplay",
+    username: Faker::HarryPotter.character,
+    address: "Disney World",
+    last_name: Faker::Name.last_name,
+    first_name: Faker::Name.first_name
+  )
+  user.save!
+end
+
+
+
+
+
+
 
 users = User.all
 item = Item.new(
@@ -32,7 +62,7 @@ item = Item.new(
   name: "Tent",
   description: "Big all season tent. Sleeps 4 people, has some minor wear but will get you through any cold night!",
   price: "77.00",
-  user: users.first,
+  user: users.second,
   rented: false
 )
 # item.remote_photo_url = "https://source.unsplash.com/random/200x200"
@@ -42,7 +72,7 @@ item = Item.new(
   name: "Cleets",
   description: "Size 12 soccer sandels",
   price: "34.55",
-  user: users.first,
+  user: users.third,
   rented: false
 )
 # item.remote_photo_url = "https://source.unsplash.com/random/200x200"
@@ -52,7 +82,7 @@ item = Item.new(
   name: "Rock Climbing Equipment",
   description: "Helmet, shoes, harness, ropes and caribeeners all for your first crack at climbing. Good luck!",
   price: "166.21",
-  user: users.first,
+  user: users.fourth,
   rented: false
 )
 # item.remote_photo_url = "https://source.unsplash.com/random/200x200"
@@ -62,7 +92,7 @@ item = Item.new(
   name: "Scuba Equipment",
   description: "Everything you need to dive into the depths of the unknown and find hidden treasures.",
   price: "345.98",
-  user: users.first,
+  user: users.fifth,
   rented: false
 )
 # item.remote_photo_url = "https://source.unsplash.com/random/200x200"
